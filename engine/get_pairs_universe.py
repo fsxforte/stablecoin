@@ -47,5 +47,6 @@ def basket_universe(size):
 		if pair!=most_frequent(tosymbols):
 			basket_pairs.append(str(pair) + str(most_frequent(tosymbols)))
 			
-	print('Largest ' + str(size) + ' coins by market cap, twinned with the most common other currency, ' + str(most_frequent(tosymbols))+  ', are ' + str(basket_pairs[:size]))
+	print('The largest ' + str(size) + ' coins by market cap, twinned with the most common other currency, ' + str(most_frequent(tosymbols))+  ', are ' + str(basket_pairs[:size]))
 
+	return basket_pairs[:size]
