@@ -64,7 +64,7 @@ def get_all_1m_klines():
 		if item!='BNB':
 			base_asset_symbols_excluding_BNB.append(str(item)+'_BNB')
 
-	for symbol in base_asset_symbols_excluding_BNB[:1]:
+	for symbol in base_asset_symbols_excluding_BNB:
 		for window in ranges:
 			response = requests.get('https://dex.binance.org/api/v1/klines?symbol=' + str(symbol) + '&interval=1m' + '&startTime=' + str(window[0])+'&endTime=' +str(window[1]) +'&limit=1000')
 			if response.status_code != 200:

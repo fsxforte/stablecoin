@@ -29,3 +29,22 @@ def pairwise(iterable: Iterable[T]) -> Iterable[Tuple[T,T]]:
 	x, y = tee(iterable)
 	next(y, None)
 	return zip(x, y)
+
+#Resample data
+def resample(df, frequency: str):
+	"""
+	Resample data to a lower time resolution. 
+	:df: input data, MUST be for a single pair only
+	:frequency: frequency to resample to, e.g. 'H' for hourly
+	"""
+	ohlcv_dict = {
+	'open': 'first',
+	'high': 'max',
+	'low': 'min',
+	'close': 'last',
+	'volume': 'sum',
+	'quote_asset_volume': 'sum',
+	'number_of_trades': 'sum'
+	}
+	df = df.resample(frequency, how = ohlcv_dict)
+	return df
