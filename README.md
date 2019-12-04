@@ -64,7 +64,8 @@ Resulting in weights with the following variability over the course of 1-month.
 This is the main file, which shows how the volatility (returns) can be dampened / smoothed by selecting a basket of assets that minimize the variance. 
 
 Three methods are compared: (i) equal weighting (a naive portfolio); (ii) using weights from random sampling and (iii) minimizing the weights using SciPy. 
-See the following figure. 
+See the following figure.
+**It shows a significant reduction in the volatility of returns for a stablecoin-basket where weights are used.**
 
 ![Improvement in volatility through variance minimization](figs/Figure_3.png)
 
