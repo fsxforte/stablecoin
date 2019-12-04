@@ -47,7 +47,7 @@ def get_all_1m_klines():
 	"""
 
 	#Make exlusive timestamp categories
-	timestamp_list = list(pairwise(generate_time_pairs(dt.datetime(2019,1,1), dt.datetime(2019,10,22))))
+	timestamp_list = list(pairwise(generate_time_pairs(dt.datetime(2019,1,1), dt.datetime(2019,12,1))))
 	ranges = []
 	for window in timestamp_list:
 		couple = (window[0]*1000+1, window[1] * 1000)
@@ -84,7 +84,7 @@ def get_all_1m_klines():
 				df_master=df_master.append(df)
 				print(df_master)
 
-	pickle_out = open("./data/kline_data.pkl","wb")
+	pickle_out = open("./data/kline_data_new.pkl","wb")
 	pickle.dump(df_master, pickle_out)
 	pickle_out.close()
 
