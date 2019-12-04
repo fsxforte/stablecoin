@@ -3,13 +3,13 @@
 The aim of this project is to examine BEP2 tokens on the Binance Blockchain.
 In particular, the liquidity and volatility of these assets, and whether combinations of these assets may afford lower volatility. 
 
-# **Section 1: project structure **
+# Section 1: project structure
 
-## **/data**
+## /data
 
 Folder that stores the data, in pickle file format.
 
-## **/engine**
+## /engine
 
 Folder that stores the main functions that are used for the analysis. In particular:
 
