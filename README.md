@@ -51,6 +51,17 @@ This is the main file, which shows how the volatility (returns) can be dampened 
 
 ## Liquidity plots (volume and number of trades)
 
+### Volumes of the top 5 assets by volume over the period 01 July to 30 Nov
+
+![Volumes](figs/Figure_volumes.png)
+
+### Number of trades of the top 5 assets by volume over the period 01 July to 30 Nov
+
+![Number of trades](figs/Figure_numtrades.png)
+
+### (Close) price of the top 5 assets by volume over the period 01 July to 30 Nov
+
+![Close prices](figs/Figure_close.png)
 
 ## Stability of basket membership
 

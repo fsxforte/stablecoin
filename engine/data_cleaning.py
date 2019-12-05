@@ -75,7 +75,12 @@ def data_explorer(variable_of_interest: str, selected_symbols, start_date: dt.da
 	df_var = df_var.set_index('date')
 	df_var = df_var[start_date:end_date]
 	#Exploratory plots
-	df_var[selected_symbols].plot()
+	fig, ax = plt.subplots()
+	df_var[selected_symbols].plot(ax = ax)
+	ax.set_ylabel(str(variable_of_interest), fontsize = 16)
+	ax.tick_params(axis='both', which='major', labelsize=16)
+	plt.title('Exploratory plot of ' + str(variable_of_interest), fontsize = 16)
+	ax.legend()	
 	plt.show()
 
 def df_make(variable_of_interest: str, selected_symbols, start_date: dt.datetime, end_date: dt.datetime):

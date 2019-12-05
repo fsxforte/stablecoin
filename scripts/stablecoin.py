@@ -6,7 +6,7 @@ import datetime as dt
 import pandas as pd
 import matplotlib.pyplot as plt
 
-from scripts import data_cleaning
+from engine import data_cleaning
 from engine.generic_functions import resample
 
 from engine.portfolio_functions import simulated_ef
