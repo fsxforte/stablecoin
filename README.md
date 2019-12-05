@@ -53,7 +53,7 @@ This is the main file, which shows how the volatility (returns) can be dampened 
 
 ### Volumes of the top 5 assets by volume over the period 01 July to 30 Nov
 
-![Volumes](figs/Figure_volumes.png)
+![Volumes](figs/Figure_volume.png)
 
 ### Number of trades of the top 5 assets by volume over the period 01 July to 30 Nov
 
