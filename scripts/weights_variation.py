@@ -16,8 +16,8 @@ from engine.portfolio_functions import simulated_ef
 
 #Weights: chosen to minimize variance of basket
 #Constant parameters
-start_date = dt.datetime(2019,9,1)
-end_date = dt.datetime(2019,10,1)
+start_date = dt.datetime(2019,7,1)
+end_date = dt.datetime(2019,12,1)
 num_assets = 5
 
 #Find list of 10 largest symbols by period over period given by start_date and end_date
@@ -27,7 +27,7 @@ selected_symbols = data_cleaning.universe_selection_on_volume(num_assets, start_
 
 #See how weights would change for everyday in September
 def daterange(start_date, end_date):
-    for n in range(int((end_date - start_date).days)):
+    for n in range(int((end_date - start_date).months)):
         yield start_date + timedelta(n)
 
 date_list = list(pairwise(daterange(start_date, end_date)))

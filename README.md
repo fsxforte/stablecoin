@@ -1,4 +1,4 @@
-**BEP-2 Stablecoin**
+# BEP-2 Stablecoin
 
 The aim of this project is to examine BEP2 tokens on the Binance Blockchain.
 In particular, the liquidity and volatility of these assets, and whether combinations of these assets may afford lower volatility. 
@@ -37,7 +37,24 @@ This file contains functions for (i) loading in the pickled data file, (ii) sele
 This purpose of the analysis in this file is to understand how much variability there is in the composition of the stablecoin basket.
 For instance, if the 5 largest assets by volume are selected in one month, how many of these assets would be selected using data from the next month?
 
-**There appears to be significant volatility in terms of the membership of assets to the basket, with many pairs joining and leaving the top 10. Therefore the analysis mainly focusses on the top 5 assets by volume to keep the basket composition stable **
+
+### weights_variation.py
+
+This file demonstrates how much the weights would change if the weights are optimized to minimize variance every day (gives a sense of how volatile the assets are intra-day).
+These weights are derives my minimizing the variance through simulation, as shown in the following figure. 
+
+### stablecoin.py
+
+This is the main file, which shows how the volatility (returns) can be dampened / smoothed by selecting a basket of assets that minimize the variance. 
+
+# Section 2: Results
+
+## Liquidity plots (volume and number of trades)
+
+
+## Stability of basket membership
+
+There appears to be significant volatility in terms of the membership of assets to the basket, with many pairs joining and leaving the top 10. Therefore the analysis mainly focusses on the top 5 assets by volume to keep the basket composition stable.
 
 In July, new larger volume symbols are ['PVT-554_BNB', 'BKBT-3A6_BNB', 'ERD-D06_BNB', 'MEETONE-031_BNB']
 
@@ -49,22 +66,22 @@ In Oct new larger volume symbols is ['KAT-7BB_BNB']
 
 **The basket for the period 1 July - 30 Nov (used in the analysis) is ['CBM-4B2_BNB', 'PVT-554_BNB', 'BKBT-3A6_BNB', 'MVL-7B0_BNB', 'NPXSXEM-89C_BNB']**
 
-### weights_variation.py
+## Stability of weights for a fixed basket of assets
 
-This file demonstrates how much the weights would change if the weights are optimized to minimize variance every day (gives a sense of how volatile the assets are intra-day).
-These weights are derives my minimizing the variance through simulation, as shown in the following figure. 
+We opt for the asset basket ['CBM-4B2_BNB', 'PVT-554_BNB', 'BKBT-3A6_BNB', 'MVL-7B0_BNB', 'NPXSXEM-89C_BNB'], since these have the highest volume over the period 1 July - 30 Nov.
+
+Finding the optimum weights for minimum variance can be done through the simulating random portfolios and inspecting the efficient frontier.
+See the following figure.  
 
 ![Minimizing variance on MV portfolio simulations](figs/Figure_1.png)
 
-Resulting in weights with the following variability over the course of 1-month.
+Resulting in weights with the following daily variability over the 1 July to 30 Nov period.
 
 ![Optimum weights through time for 5 largest assets](figs/Figure_2.png)
 
-### stablecoin.py
 
-This is the main file, which shows how the volatility (returns) can be dampened / smoothed by selecting a basket of assets that minimize the variance. 
 
-Three methods are compared: (i) equal weighting (a naive portfolio); (ii) using weights from random sampling and (iii) minimizing the weights using SciPy. 
+Three methods for a basket of stable-assets are compared: (i) equal weighting (a naive portfolio); (ii) using weights from random sampling and (iii) minimizing the weights using SciPy. 
 See the following figure.
 
 **It shows a significant reduction in the volatility of returns for a stablecoin-basket where weights are used.**
