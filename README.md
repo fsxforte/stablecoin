@@ -36,6 +36,7 @@ This file contains functions for (i) loading in the pickled data file, (ii) sele
 
 This purpose of the analysis in this file is to understand how much variability there is in the composition of the stablecoin basket.
 For instance, if the 5 largest assets by volume are selected in one month, how many of these assets would be selected using data from the next month?
+
 **There appears to be significant volatility in terms of the membership of assets to the basket, with many pairs joining and leaving the top 10. Therefore the analysis mainly focusses on the top 5 assets by volume to keep the basket composition stable **
 
 In July, new larger volume symbols are ['PVT-554_BNB', 'BKBT-3A6_BNB', 'ERD-D06_BNB', 'MEETONE-031_BNB']
@@ -46,7 +47,7 @@ In Sept new larger volume symbols are ['MVL-7B0_BNB', 'NPXSXEM-89C_BNB']
 
 In Oct new larger volume symbols is ['KAT-7BB_BNB']
 
-**The basket for September (used in the analysis) is [CBM-4B2_BNB. MVL-7B0_BNB, RAVEN-F66_BNB, BKBT-3A6_BNB, NPSXEM-89C_BNB]**
+**The basket for the period 1 July - 30 Nov (used in the analysis) is ['CBM-4B2_BNB', 'PVT-554_BNB', 'BKBT-3A6_BNB', 'MVL-7B0_BNB', 'NPXSXEM-89C_BNB']**
 
 ### weights_variation.py
 
@@ -65,7 +66,16 @@ This is the main file, which shows how the volatility (returns) can be dampened 
 
 Three methods are compared: (i) equal weighting (a naive portfolio); (ii) using weights from random sampling and (iii) minimizing the weights using SciPy. 
 See the following figure.
+
 **It shows a significant reduction in the volatility of returns for a stablecoin-basket where weights are used.**
+
+For the following figure the weights are chosen to minimize the variance over the period 1 July to 30 Nov, and are as follows. 
+
+CBM-4B2 - 0.077092
+PVT-554 - 0.230077
+BKBT-3A6 - 0.030297
+MVL-7B0 - 0.442056
+NPXSXEM-89C - 0.220478
 
 ![Improvement in volatility through variance minimization](figs/Figure_3.png)
 

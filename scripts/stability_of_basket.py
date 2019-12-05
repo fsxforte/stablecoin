@@ -48,6 +48,11 @@ start_date = dt.datetime(2019,10,1)
 end_date = dt.datetime(2019,11,1)
 selected_symbols_oct = data_cleaning.universe_selection_on_volume(num_assets, start_date, end_date)
 
+#November
+start_date = dt.datetime(2019,11,1)
+end_date = dt.datetime(2019,12,1)
+selected_symbols_nov = data_cleaning.universe_selection_on_volume(num_assets, start_date, end_date)
+
 #Compare lists
 def symbols_diff(li1, li2): 
     li_dif = [i for i in li2 if i not in li1] 
@@ -67,6 +72,9 @@ diff = symbols_diff(selected_symbols_aug, selected_symbols_sep)
 
 diff = symbols_diff(selected_symbols_sep, selected_symbols_oct)
 #In Oct new larger volume symbols are ['CNNS-E16_BNB', 'AXPR-777_BNB']
+
+diff = symbols_diff(selected_symbols_oct, selected_symbols_nov)
+#In Nov new larger volume symbols are ['PYN-C37_BNB', 'EVT-49B_BNB']
 
 
 ###### 5 assets
@@ -107,10 +115,11 @@ start_date = dt.datetime(2019,10,1)
 end_date = dt.datetime(2019,11,1)
 selected_symbols_oct = data_cleaning.universe_selection_on_volume(num_assets, start_date, end_date)
 
-#Compare lists
-def symbols_diff(li1, li2): 
-    li_dif = [i for i in li2 if i not in li1] 
-    return li_dif 
+#November
+start_date = dt.datetime(2019,11,1)
+end_date = dt.datetime(2019,12,1)
+selected_symbols_nov = data_cleaning.universe_selection_on_volume(num_assets, start_date, end_date)
+
 
 #Jan-Mar have 0 symbols
 #April has 2, May has 7, June and onwards have at least 10
@@ -127,4 +136,5 @@ diff = symbols_diff(selected_symbols_aug, selected_symbols_sep)
 diff = symbols_diff(selected_symbols_sep, selected_symbols_oct)
 #In Oct new larger volume symbols is ['KAT-7BB_BNB']
 
-#Want to see how stable a given portfolio is in terms of resultant price
+diff = symbols_diff(selected_symbols_oct, selected_symbols_nov)
+#In Oct new larger volume symbols is ['MTV-4C6_BNB']

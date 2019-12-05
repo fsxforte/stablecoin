@@ -11,7 +11,7 @@ def load_from_pickle():
 	Function to load cached data from pickle file. 
 	'''
 	#Import raw data
-	file = open("./data/kline_data.pkl", 'rb')
+	file = open("./data/kline_data_new.pkl", 'rb')
 	df = pickle.load(file)
 
 	#Basic data processing

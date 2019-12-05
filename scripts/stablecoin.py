@@ -13,8 +13,8 @@ from engine.portfolio_functions import simulated_ef
 from engine import portfolio_functions
 
 #Constant parameters
-start_date = dt.datetime(2019,5,1)
-end_date = dt.datetime(2019,9,30)
+start_date = dt.datetime(2019,7,1)
+end_date = dt.datetime(2019,12,1)
 num_assets = 5
 num_portfolios = 1000
 risk_free_rate = 0.02
